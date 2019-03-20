@@ -1,33 +1,33 @@
 const todosData = [
   {
     id: 1,
-    task: 'Clean up my room.',
+    taskName: 'Clean up my room.',
     completed: false,
   },
   {
     id: 2,
-    task: 'Walk the dog.',
+    taskName: 'Walk the dog.',
     completed: false,
   },
   {
     id: 3,
-    task: 'Make dinner.',
-    completed: false,
+    taskName: 'Make dinner.',
+    completed: true,
   },
   {
     id: 4,
-    task: 'Do my Homework.',
+    taskName: 'Do my Homework.',
     completed: true,
   },
   {
     id: 5,
-    task: 'Read Harry Potter.',
+    taskName: 'Read Harry Potter.',
     completed: false,
   },
   {
     id: 6,
-    task: 'Learn React',
-    completed: true,
+    taskName: 'Learn React',
+    completed: false,
   }
 ]
 

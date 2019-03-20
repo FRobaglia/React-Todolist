@@ -7,22 +7,20 @@ class App extends React.Component {
     super();
     this.state = {
       todos: todosData
-    };
-    this.handleChange = this.handleChange.bind(this)
-  }
-
-  handleChange(id) {
-    console.log('change detected')
+    }
   }
 
   render() {
+    console.log(this.state.todos)
     const todoComponents = this.state.todos.map(item => {
-      return <TodoItem key={item.id} handleChange={this.handleChange(item.id)} item={item} />;
+      return <TodoItem key={item.id} item={item} />;
     });
-    return <ul>
-      <h1>My TodoList</h1>
-    {todoComponents}
-    </ul>;
+    return (
+      <ul>
+        <h1>My TodoList</h1>
+        {todoComponents}
+      </ul>
+    )
   }
 }
 

@@ -8,6 +8,9 @@ body {
   font-size: 18px;
   font-weight: bold;
 }
+.checked {
+  text-decoration: line-through;
+}
 ul {
   margin: 0 auto;
   margin-top: 50px;
@@ -27,4 +30,8 @@ h1 {
 
 span {
   margin: 15px;
+}
+
+input:checked + span {
+  text-decoration: line-through
 }
