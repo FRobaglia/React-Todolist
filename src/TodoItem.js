@@ -1,20 +1,20 @@
-import React from 'react'
-
+import React from "react";
 
 class TodoItem extends React.Component {
-  handleChange() {
-    this.setState({item: Object.assign(this.props.item, { completed: !this.props.item.completed})});
-  }
   render() {
     return (
-      <li> 
+      <li>
         <input
-        onChange={this.handleChange.bind(this)}
-        checked={this.props.item.completed} 
-        type="checkbox" /> 
+          type="checkbox"
+          checked={this.props.item.completed}
+          onChange={() => {
+            this.props.handleChange(this.props.item.id);
+          }}
+        />
         <span>{this.props.item.taskName}</span>
       </li>
-    )
+    );
   }
 }
-export default TodoItem
+
+export default TodoItem;

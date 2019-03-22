@@ -1,27 +1,42 @@
-import React from "react"
-import TodoItem from "./TodoItem"
-import todosData from "./todosData"
+import React from 'react'
+import todosData from './todosData';
+import TodoItem from './TodoItem'
 
 class App extends React.Component {
   constructor() {
-    super();
+    super()
     this.state = {
       todos: todosData
     }
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange(id) {
+    this.setState(prevState => {
+      const newTodos = prevState.todos.map(todo => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed
+        }
+        return todo
+      })
+      return {
+        todos: newTodos
+      }
+    })
   }
 
   render() {
-    console.log(this.state.todos)
-    const todoComponents = this.state.todos.map(item => {
-      return <TodoItem key={item.id} item={item} />;
-    });
+    const todos = todosData.map(todo => {
+      return (
+        <TodoItem item={todo} handleChange={this.handleChange}/>
+      )
+    })
     return (
-      <ul>
-        <h1>My TodoList</h1>
-        {todoComponents}
-      </ul>
+    <ul>
+      {todos}
+    </ul>
     )
   }
 }
 
-export default App;
+export default App
